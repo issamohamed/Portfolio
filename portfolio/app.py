@@ -19,6 +19,6 @@ def Education():
     return render_template('education.html')
 
 if __name__ == '__main__':
-    # Specifying a unique port number to avoid possible port conflicts
+    # Specifying a unique port number to avoid possible port unavailability conflicts
     app.run(host="0.0.0.0", port=3333)
     app.run(debug=True)
