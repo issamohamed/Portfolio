@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="static/styles.css">
   <title>Projects - Issa Mohamed</title>
   <style>
     body.projects-page {
@@ -14,6 +14,7 @@
       color: #fff;
       padding: 20px;
       text-align: center;
+      position: relative;
     }
     .projects-content {
       padding: 20px;
@@ -65,10 +66,25 @@
 <body class="projects-page">
   <div class="projects-header">
     <div class="back-button">
-      <a class="button" href="{{ url_for('Home') }}">Back to Home</a>
+      <a href="{{ url_for('Home') }}" class="button">Back to Home</a>
     </div>
     <h1>Projects</h1>
   </div>
+
+  <div class="project-title">
+    <h3>Natural Taste</h3>
+    <div class="project-date">June 25, 2024</div>
+  </div>
+  <div class="project-description">
+    <p>
+      "Natural Taste" is a nifty web application I've developed, inspired by the fascinating connection between weather and music, and how our environment can shape our listening experiences. At its core, the project represents my vision of creating a more intuitive and environmentally-aware approach to music discovery. The application is built as a multi-page web interface, with each page serving a distinct purpose in the user's journey. The landing page, "index.html," welcomes users with an engaging interface featuring social links and a clear call-to-action. From there, users are guided to "intel.html," where they can input their city to begin their weather-music exploration. The real magic happens behind the scenes: when a user enters their location, the application makes a precise API call to AccuWeather, fetching real-time weather data for their specific location. This weather information is then expertly processed and passed to the Groq AI API, which employs sophisticated algorithms to generate contextually appropriate music recommendations. The results are displayed on "n_t.html," where users can view their current weather conditions alongside AI-curated music suggestions, creating a seamless blend of environmental awareness and musical discovery. But I didn't stop there - I also implemented "forecast.html" and "historical.html" to provide users with future and past weather-music pairings, allowing them to explore how their musical journey might evolve with changing weather patterns. The interface updates dynamically as new data flows in, presenting users with location details, weather conditions, and carefully selected music genres, tracks, and artists. To enhance user experience, I incorporated intuitive navigation with thoughtfully placed buttons, allowing users to easily move between current, forecast, and historical views, while maintaining the option to return to previous pages through a convenient "Back" button. The entire application is designed to provide a fresh and dynamic music discovery experience that's uniquely tailored to each user's environment, making every listening session as natural as the weather itself.
+    </p>
+  </div>
+  <div class="project-link">
+    <span class="link-field"><a href="https://jocular-fox-018062.netlify.app" style="color: #820606;"><u>Link to Natural Taste Here!</u></a></span>
+  </div>
+
+
 
   <div class="project-title">
     <h3>Seer</h3>
@@ -76,15 +92,15 @@
   </div>
   <div class="project-description">
     <p>
-      "Seer" is a AI web application I've been passionately developing, graciously inspired by recent strides in new public AI use cases, and I'm eager to walk you through its inner workings. At its core is "app.py," a Python script that serves as the project's foundation. It utilizes the Flask web framework to create a user-friendly interface. When you visit the project's main page, you'll be greeted by a supplmentary HTML template, "index2.html" that provides the interface for the User's entire experience.
+      "Seer" is a AI web application I've been passionately developing, graciously inspired by recent strides in new public AI use cases, and I'm eager to walk you through its inner workings. At its core is "app.py," a Python script that serves as the project's foundation. It utilizes the Flask web framework to create a user-friendly interface. When you visit the project's main page, you'll be greeted by a supplementary HTML template, "index2.html" that provides the interface for the User's entire experience.
 
-    Here's where things get intriguing: you have the ability to record audio directly through your web browser. Once you've finished recording, the audio file is carefully saved as "sample_audio.webm" in a dedicated directory known as "uploads." But the real magic unfolds when the audio is handed over to "decipher.py."
+      Here's where things get intriguing: you have the ability to record audio directly through your web browser. Once you've finished recording, the audio file is carefully saved as "sample_audio.webm" in a dedicated directory known as "uploads." But the real magic unfolds when the audio is handed over to "decipher.py."
 
-    "decipher.py" is a Python module that takes on the crucial task of processing this audio input. It begins by verifying the existence of the uploaded audio file and then proceeds to load it into a specialized audio processing API developed by Openai called "Whisper". Whisper boasts impressive capabilities, including transcribing spoken words and natural language in any language within the audio, effectively converting audio into readable text.
+      "Decipher.py" is a Python module that takes on the crucial task of processing this audio input. It begins by verifying the existence of the uploaded audio file and then proceeds to load it into a specialized audio processing API developed by OpenAI called "Whisper". Whisper boasts impressive capabilities, including transcribing spoken words and natural language in any language within the audio, effectively converting audio into readable text.
 
-    Seeing this, I decided to take a fascinating twist: The processed transcribed text Whisper converted is passed on to OpenAI's powerful GPT-3.5 Turbo model. In essence, think of Seer as a virtual middleman between these two highly capable AI processes, GPT-3.5's capabilities of generating profound responses based on the content of the audio Whisper already processesed from the user. To facilitate this interaction, the user simply simulates a conversation with Seer via a mic recording on their chrome browser. They send in their recorded audio, which is transcribed and responded to, allowing Seer to reply with insightful answers and commentary, akin to a fictional mystic revealing its wisdom.
+      Seeing this, I decided to take a fascinating twist: The processed transcribed text Whisper converted is passed on to OpenAI's powerful GPT-3.5 Turbo model. In essence, think of Seer as a virtual middleman between these two highly capable AI processes, GPT-3.5's capabilities of generating profound responses based on the content of the audio Whisper already processes from the user. To facilitate this interaction, the user simply simulates a conversation with Seer via a mic recording on their chrome browser. They send in their recorded audio, which is transcribed and responded to, allowing Seer to reply with insightful answers and commentary, akin to a fictional mystic revealing its wisdom.
 
-    Seer's generated response along with the user's transcription is decoratively displayed on the web page thanks to some Javascript and CSS based built UI, making it easy for the user to engage in a dynamic conversation. Additionally, the user is able to also playback to hear the quality of their audio input alongside the AI's responses, which is presented in a gamelike chatbox with the wise mystic, providing a seamless and engaging user experience.
+      Seer's generated response along with the user's transcription is decoratively displayed on the web page thanks to some JavaScript and CSS based built UI, making it easy for the user to engage in a dynamic conversation. Additionally, the user is able to also playback to hear the quality of their audio input alongside the AI's responses, which is presented in a game-like chatbox with the wise mystic, providing a seamless and engaging user experience.
     </p>
   </div>
   <div class="project-link">
@@ -97,13 +113,12 @@
   </div>
   <div class="project-description">
     <p>
-      This Java program allows users to retrieve the current stock price of any company listed on the New York Stock Exchange (NYSE). It's a command-line application that interacts with the Alpha Vantage API to fetch real-time stock data.The program offers a user-friendly interface where users can enter the NYSE abbreviation of the desired stock. It validates the input, retrieves the stock price using the API, and displays it on the screen. Users can continue looking up stock prices for multiple stocks, with the option to exit the program at any time. During the development process, I faced a few challenges. One of the key challenges was integrating with the Alpha Vantage API and handling the JSON response returned by the API. I used the org.json library to parse the JSON data and extract the necessary information, such as the stock symbol and price. Another challenge was ensuring a smooth user experience and handling user input validation. I implemented error handling to handle cases where users input an invalid stock symbol or provide incorrect responses when prompted. Overall, the Stock Price Fetcher program provides a simple yet powerful tool for retrieving real-time stock prices.
+      This Java program allows users to retrieve the current stock price of any company listed on the New York Stock Exchange (NYSE). It's a command-line application that interacts with the Alpha Vantage API to fetch real-time stock data. The program offers a user-friendly interface where users can enter the NYSE abbreviation of the desired stock. It validates the input, retrieves the stock price using the API, and displays it on the screen. Users can continue looking up stock prices for multiple stocks, with the option to exit the program at any time. During the development process, I faced a few challenges. One of the key challenges was integrating with the Alpha Vantage API and handling the JSON response returned by the API. I used the org.json library to parse the JSON data and extract the necessary information, such as the stock symbol and price. Another challenge was ensuring a smooth user experience and handling user input validation. I implemented error handling to handle cases where users input an invalid stock symbol or provide incorrect responses when prompted. Overall, the Stock Price Fetcher program provides a simple yet powerful tool for retrieving real-time stock prices.
     </p>
   </div>
   <div class="project-link">
     <span class="link-field"><a href="https://github.com/issamohamed/Stock_Price_Fetcher/blob/main/StockPriceFetcher.java" style="color: #820606;"><u>Stock Fetcher Link Here!</u></a></span>
   </div>
-
 
   <div class="project-title">
     <h3>ATM Machine</h3>
@@ -118,7 +133,6 @@
     <span class="link-field"><a href="https://github.com/issamohamed/ATM-Interface-/blob/main/atm_interface.java" style="color: #820606;"><u>ATM Machine Link Here!</u></a></span>
   </div>
 
-
   <div class="projects-content">
     <div class="project-title">
       <h3>Connect 4</h3>
@@ -126,7 +140,7 @@
     </div>
     <div class="project-description">
       <p>
-        As an avid lover of classic games, for a class project, I embarked on a thrilling project to create my own rendition of "Connect Four" in Python. To bring this game to life, I harnessed the power of the Tkinter module, a popular graphical user interface library, and augmented it with my custom graphics library, aptly named "pgl". Through careful design and meticulous coding, I managed to strike a good balance between aesthetics and functionality, resulting in an immersive and captivating gaming experience. With a few deft clicks of the mouse, players can strategically place their moves on a sleek and graphical game board, with each move triggering a cascade of events as the game state is dynamically updated. To provide an engaging challenge, I implemented a formidable bot opponent armed with a repertoire of clever strategies. This AI adversary carefully evaluates the game state and executes cunning maneuvers to thwart the player's paths to victory. Additionally, behind the scenes, my code quickly tracks every move, cataloging player choices, bot counteractions, and the remaining open spots on the board. Leveraging this wealth of information, I was able to painstakingly engineer an intelligent win-condition checker, capable of swiftly identifying when a player triumphs over their opponent or when the game ends in a draw. Overall, this project provided a great learning experience regarding how to tackle dynamic and conditional event handling. 
+        As an avid lover of classic games, for a class project, I embarked on a thrilling project to create my own rendition of "Connect Four" in Python. To bring this game to life, I harnessed the power of the Tkinter module, a popular graphical user interface library, and augmented it with my custom graphics library, aptly named "pgl". Through careful design and meticulous coding, I managed to strike a good balance between aesthetics and functionality, resulting in an immersive and captivating gaming experience. With a few deft clicks of the mouse, players can strategically place their moves on a sleek and graphical game board, with each move triggering a cascade of events as the game state is dynamically updated. To provide an engaging challenge, I implemented a formidable bot opponent armed with a repertoire of clever strategies. This AI adversary carefully evaluates the game state and executes cunning maneuvers to thwart the player's paths to victory. Additionally, behind the scenes, my code quickly tracks every move, cataloging player choices, bot counteractions, and the remaining open spots on the board. Leveraging this wealth of information, I was able to painstakingly engineer an intelligent win-condition checker, capable of swiftly identifying when a player triumphs over their opponent or when the game ends in a draw. Overall, this project provided a great learning experience regarding how to tackle dynamic and conditional event handling.
       </p>
     </div>
     <div class="project-link">
@@ -145,12 +159,7 @@
     <div class="project-link">
       <span class="link-field"><a href="https://github.com/issamohamed/Sudoku-Solver/blob/main/sudoku_solver_txt.py" style="color: #820606;"><u>Sudoku Solver Link Here!</u></a></span>
     </div>
-
-
-
-    
-    
-    <!-- Repeat the above sections for additional projects -->
+  
     
   </div>
 </body>
