@@ -68,12 +68,12 @@
       margin-bottom: 10px;
     }
   </style>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
   <div class="header">
     <div class="back-button">
-      <a class="button" href="{{ url_for('Home') }}">Back to Home</a>
+      <a href="{{ url_for('Home') }}" class="button">Back to Home</a>
     </div>
     <h1>Education</h1>
   </div>
